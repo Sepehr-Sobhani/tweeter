@@ -1,0 +1,30 @@
+form footer {
+  font-family: Bungee, sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #545149;
+  margin-top: 0.5em;
+}
+
+form button {
+  color: white;
+  background-color: #4056a1;
+  outline: none;
+}
+
+form textarea::placeholder {
+  opacity: 0.5;
+}
+
+form textarea {
+  width: 100%;
+  background-color: #f4f1ec;
+  border: none;
+  resize: none;
+  border-bottom: 3px solid #545149;
+  outline: none;
+  font-weight: 700;
+  color: #545454;
+  padding: 0;
+}
