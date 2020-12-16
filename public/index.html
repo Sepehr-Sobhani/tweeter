@@ -11,12 +11,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,700&display=swap"
     rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/c7ec46e22f.js" crossorigin="anonymous"></script>
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -49,6 +51,40 @@
           <output name="counter" class="counter" for="tweet-text">140</output>
         </footer>
       </form>
+    </section>
+    <section>
+      <article class="tweet">
+        <div class="tweet-header">
+          <div class="author">
+            <div class="author-avatar">
+              <img src="" alt="Girl in a jacket" width="50" height="50">
+            </div>
+            <div class="author-name">
+              <!-- ${escape(tweet.user.name)} -->
+              author name here
+            </div>
+          </div>
+          <div class="author-handle">
+            <!-- ${escape(tweet.user.handle)} -->
+            author handle here
+          </div>
+        </div>
+        <div class="tweet-body">
+          <!-- <p>${escape(tweet.content.text)}</p> -->
+          dummy tweet here
+        </div>
+        <div class="tweet-footer">
+          <div class="tweet-age">
+            <!-- <p>Posted ${escape(tweetElapsedTime(tweet.created_at))}</p> -->
+            tweet time here
+          </div>
+          <div class="tweet-actions">
+            <i class="fas fa-flag fa-xs"></i>
+            <i class="fas fa-retweet fa-xs"></i>
+            <i class="fas fa-heart fa-xs"></i>
+          </div>
+        </div>
+      </article>
     </section>
   </main>
   <!-- App JS -->
