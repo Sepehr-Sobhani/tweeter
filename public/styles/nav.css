@@ -1,5 +1,5 @@
 nav {
-  position: relative sticky;
+  position: fixed;
   height: 60px;
   background-color: #4056a1;
   color: #ffffff;

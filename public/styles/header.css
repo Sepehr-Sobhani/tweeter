@@ -1,11 +1,11 @@
 header {
-  height: 400px;
+  height: 500px;
   width: 100%;
-  margin: 0;
+  padding-top: 60px;
   z-index: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   font-size: 2rem;
 }
 
@@ -22,4 +22,8 @@ header {
 
 header span {
   font-weight: bold;
+}
+
+header img {
+  width: 250px;
 }
