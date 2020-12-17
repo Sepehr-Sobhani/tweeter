@@ -31,18 +31,22 @@ $(document).ready(function () {
   //Handling form submition
   $("#form").submit(function (event) {
     event.preventDefault();
-    const formText = $(this).serialize();
-    $.post({ url: `${URL}tweets/`, data: formText })
-      .then((res) => {
-        renderTweets(loadTweets());
-      })
-      .then((res) => {
-        //Disabling the tweet button
-        $("#button").attr("disabled", true);
-      })
-      .catch((err) => {
-        console.log("Error retreiving tweets");
-      });
+    const formText = $(this).serialize() ? $(this).serialize() : "";
+    if (formText) {
+      $.post({ url: `${URL}tweets/`, data: formText })
+        .then((res) => {
+          renderTweets(loadTweets());
+        })
+        .then((res) => {
+          //Disabling the tweet button
+          $("#button").attr("disabled", true);
+        })
+        .catch((err) => {
+          console.log("Error retreiving tweets");
+        });
+    } else {
+      alert("Tweet can't be empty");
+    }
   });
   renderTweets(loadTweets());
 });
