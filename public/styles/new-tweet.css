@@ -28,3 +28,16 @@ form textarea {
   color: #545454;
   padding: 0;
 }
+
+.error {
+  display: none;
+  justify-content: space-around;
+  height: 0;
+  padding: 30px;
+  margin-top: 10px;
+  width: 100%;
+  align-items: center;
+  color: white;
+  background-color: red;
+  border-radius: 40px;
+}

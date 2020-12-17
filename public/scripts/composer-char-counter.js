@@ -1,21 +1,16 @@
 const characterCounterHandler = function (
   inputValueLength,
   counterValue,
-  tweetButton
+  errorMessage
 ) {
   const maxTweetChar = 140;
   counterValue.val(maxTweetChar - inputValueLength);
-  if (inputValueLength === 0 || inputValueLength > maxTweetChar) {
-    //Disable the tweet button
-    tweetButton.attr("disabled", true);
-    tweetButton.css({ "background-color": "grey" });
+  if (inputValueLength > maxTweetChar) {
     if (inputValueLength > maxTweetChar) {
       //Change the counter number's color to Red
       counterValue.css({ color: "red" });
     }
   } else {
-    tweetButton.attr("disabled", false);
-    tweetButton.css({ "background-color": "#4056a1" });
     counterValue.css({ color: "#545149" });
   }
 };
@@ -26,10 +21,9 @@ $(document).ready(function () {
   $("#tweet-text").on("keyup", function () {
     const inputValueLength = $(this).val().length;
     const counterValue = $(this).siblings().find(".counter");
-    const tweetButton = $(this).parent().find("#button");
+    const errorMessage = $(this).parent().find(".error");
     const bindFunc = characterCounterHandler.bind(this);
-    bindFunc(inputValueLength, counterValue, tweetButton);
+    bindFunc(inputValueLength, counterValue, errorMessage);
+    $(".error").slideUp("fast", function () {});
   });
-  $("#button").attr("disabled", true);
-  $("#button").css({ "background-color": "grey" });
 });

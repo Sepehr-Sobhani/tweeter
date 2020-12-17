@@ -20,28 +20,33 @@ const renderTweets = function (tweets) {
   }
 };
 
+//Error message function
+const showErroMessage = function (errMessage) {
+  $(".error").slideDown("fast", function () {
+    $(".error").css("display", "flex");
+    $(".error").find("p").text(errMessage);
+  });
+};
+
 //Handling form submition
 const tweetFormHandler = function () {
   $("#form").submit(function (event) {
     event.preventDefault();
-    const formText = $(this).serialize() ? $(this).serialize() : "";
-    if (formText) {
-      $.post({ url: `${URL}tweets`, data: formText })
-        .then(() => {
-          loadTweets();
-          $("#tweet-text").val("");
-          $(".counter").val(140);
-        })
-        .then(() => {
-          //Disabling the tweet button
-          $("#button").attr("disabled", true);
-          $("#button").css({ "background-color": "grey" });
-        })
-        .catch((err) => {
-          console.log("Error retreiving tweets");
-        });
+    const tweetText = $(this).find("textarea").val();
+    if (tweetText !== "" && tweetText !== null && tweetText <= 140) {
+      const queryString = $(this).serialize();
+      $.post({ url: `${URL}tweets`, data: queryString }).then(() => {
+        loadTweets();
+        $("#tweet-text").val("");
+        $(".counter").val(140);
+        $(".counter").css({ color: "#545149" });
+      });
     } else {
-      alert("Tweet can't be empty");
+      if (tweetText.length > 140) {
+        showErroMessage("Max char allowed is 140!");
+      } else {
+        showErroMessage("Can't submit empty Tweet!");
+      }
     }
   });
 };
