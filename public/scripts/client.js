@@ -6,40 +6,36 @@
 
 const URL = "http://localhost:8080/";
 const loadTweets = function () {
-  $.ajax({ url: `${URL}tweets/` })
-    .then((res) => {
-      // pass the result to the render tweets function
-      renderTweets(res);
-    })
-    .catch((err) => {
-      console.log("Error rendering tweets");
-    });
+  $.get("/tweets", function (tweets) {
+    renderTweets(tweets);
+  });
 };
 
 //Render each tweet to the page
 const renderTweets = function (tweets) {
-  $("#tweet-text").val("");
-  for (const key in tweets) {
-    const tweet = tweets[key];
-    const tweetToRender = createTweetElement(tweet);
+  $(".tweets-container").empty();
+  for (const key of tweets) {
+    const tweetToRender = createTweetElement(key);
     $(".tweets-container").prepend(tweetToRender);
   }
 };
 
-//Handling DOM load
-$(document).ready(function () {
-  //Handling form submition
+//Handling form submition
+const tweetFormHandler = function () {
   $("#form").submit(function (event) {
     event.preventDefault();
     const formText = $(this).serialize() ? $(this).serialize() : "";
     if (formText) {
-      $.post({ url: `${URL}tweets/`, data: formText })
-        .then((res) => {
-          renderTweets(loadTweets());
+      $.post({ url: `${URL}tweets`, data: formText })
+        .then(() => {
+          loadTweets();
+          $("#tweet-text").val("");
+          $(".counter").val(140);
         })
-        .then((res) => {
+        .then(() => {
           //Disabling the tweet button
           $("#button").attr("disabled", true);
+          $("#button").css({ "background-color": "grey" });
         })
         .catch((err) => {
           console.log("Error retreiving tweets");
@@ -48,5 +44,10 @@ $(document).ready(function () {
       alert("Tweet can't be empty");
     }
   });
-  renderTweets(loadTweets());
+};
+
+//Handling DOM load
+$(document).ready(function () {
+  tweetFormHandler();
+  loadTweets();
 });

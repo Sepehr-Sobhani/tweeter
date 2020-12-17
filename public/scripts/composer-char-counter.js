@@ -1,17 +1,3 @@
-$(document).ready(function () {
-  //On keyup changes, handles the allowed length of characters and
-  //change the color of character counter to red and disable the tweet button if exceeded
-  $("#tweet-text").on("keyup", function () {
-    const inputValueLength = $(this).val().length;
-    const counterValue = $(this).siblings().find(".counter");
-    const tweetButton = $(this).parent().find("#button");
-    const bindFunc = characterCounterHandler.bind(this);
-    bindFunc(inputValueLength, counterValue, tweetButton);
-  });
-  $("#button").attr("disabled", true);
-  $("#button").css({ "background-color": "grey" });
-});
-
 const characterCounterHandler = function (
   inputValueLength,
   counterValue,
@@ -33,3 +19,17 @@ const characterCounterHandler = function (
     counterValue.css({ color: "#545149" });
   }
 };
+
+$(document).ready(function () {
+  //On keyup changes, handles the allowed length of characters and
+  //change the color of character counter to red and disable the tweet button if exceeded
+  $("#tweet-text").on("keyup", function () {
+    const inputValueLength = $(this).val().length;
+    const counterValue = $(this).siblings().find(".counter");
+    const tweetButton = $(this).parent().find("#button");
+    const bindFunc = characterCounterHandler.bind(this);
+    bindFunc(inputValueLength, counterValue, tweetButton);
+  });
+  $("#button").attr("disabled", true);
+  $("#button").css({ "background-color": "grey" });
+});
