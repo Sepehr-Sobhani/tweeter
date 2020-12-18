@@ -14,9 +14,10 @@ const loadTweets = function () {
 
 //Render each tweet to the page
 const renderTweets = function (tweets) {
+  const time = new Date().toLocaleDateString();
   $(".tweets-container").empty();
   for (const key of tweets) {
-    const tweetToRender = createTweetElement(key);
+    const tweetToRender = createTweetElement(key, time);
     $(".tweets-container").prepend(tweetToRender);
   }
 };

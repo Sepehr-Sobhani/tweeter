@@ -1,24 +1,28 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a SPA inspired by Twitter. This app is a full stack web application using:
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+- Front-end: HTML, CSS, JS, jQuery and AJAX
+- Server: Node, Express
 
-## When the app is started you can:
+This app is a project assignment from Lighthouse Labs for The Web Developer Bootcamp. Only the server code and database "dummy" data were given as this was a project for client-side development. All CSS, JS, jQuery, and AJAX coding was performed by the developer.
 
-- Browse existing tweets listed with the most recent at the top.
-- If you would like to tweet, press the "Write a tweet" icon in the navigation menu.
-- The yellow button at the lower right hand corner of the screen will scroll to the top of the existing tweets list allowing you to enter a new tweet.
+## App Highlights
+
+- Users can view and create content.
+- Users can view the app on various devices as the app has a responsive design.
+- The app has various components to add to the user experience from sliding sections to bouncing animations.
+- The app notifies the user of their content length and warns the user if it is too long.
 
 ## Tablet layout
 
-![Tablet-Layout-1]()
-![Tablet-Layout-2]()
+![Tablet-Layout-1](https://github.com/Sepehr-Sobhani/tweeter/blob/master/docs/Tablet-layout.png)
+![Tablet-Layout-2](https://github.com/Sepehr-Sobhani/tweeter/blob/master/docs/Tablet-layout-2.png)
 
 ## Desktop Layout
 
-![Desktop-Layout-1]()
-![Desktop-Layout-2]()
+![Desktop-Layout-1](https://github.com/Sepehr-Sobhani/tweeter/blob/master/docs/Desktop-layout.png)
+![Desktop-Layout-2](https://github.com/Sepehr-Sobhani/tweeter/blob/master/docs/Desktop-layout-2.png)
 
 ## Dependencies
 

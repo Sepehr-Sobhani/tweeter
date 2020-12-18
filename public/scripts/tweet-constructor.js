@@ -1,5 +1,5 @@
-//Create new tweet elements
-const createTweetElement = function (tweetObj) {
+//Create newtweet elements
+const createTweetElement = function (tweetObj, time) {
   const $tweet = ` <article class="tweet">
       <div class="tweet-header">
         <div class="author">
@@ -21,7 +21,7 @@ const createTweetElement = function (tweetObj) {
       </div>
       <div class="tweet-footer">
         <div class="tweet-age">
-        <p>Posted ${escape(tweetObj.created_at)}</p>
+        <p>Posted ${time}</p>
         </div>
         <div class="tweet-actions">
         <i class="fas fa-flag fa-xs"></i>
