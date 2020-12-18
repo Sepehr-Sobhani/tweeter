@@ -1,4 +1,4 @@
-//Create tweet elements
+//Create new tweet elements
 const createTweetElement = function (tweetObj) {
   const $tweet = ` <article class="tweet">
       <div class="tweet-header">

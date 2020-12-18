@@ -1,3 +1,7 @@
+@import "./header.css";
+@import "./nav.css";
+@import "./new-tweet.css";
+@import "./tweets.css";
 /*
  * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * https://css-tricks.com/international-box-sizing-awareness-day/
@@ -18,7 +22,7 @@ html {
 
 body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #e9dfd0;
   font-size: 24px;
   font-family: "Source Sans Pro", sans-serif;
 }
@@ -28,7 +32,49 @@ body {
 */
 
 main {
-  width: 90%;
-  margin: 0 auto;
-  background-color: #f4f1ec;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.tweets {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  padding: 20px;
+}
+
+footer .bottom-toggle {
+  display: none;
+  font-family: "Bungee", sans-serif;
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: #d89820;
+  color: #4056a1;
+  cursor: pointer;
+}
+
+footer .bottom-toggle:hover {
+  background-color: #edb65f;
+  box-shadow: 2px 6px 8px #888888;
+}
+
+/* Tablet breakpoint */
+@media only screen and (min-width: 768px) {
+  main {
+    display: flex;
+    flex-direction: row;
+  }
+  .tweets {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    padding: 20px;
+  }
 }

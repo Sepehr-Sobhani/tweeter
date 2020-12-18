@@ -1,3 +1,8 @@
+.compose {
+  display: none;
+  margin: 0px 20px;
+}
+
 form footer {
   font-family: Bungee, sans-serif;
   display: flex;
@@ -14,12 +19,12 @@ form button {
 }
 
 form textarea::placeholder {
-  opacity: 0.5;
+  color: #a39e9e;
 }
 
 form textarea {
   width: 100%;
-  background-color: #f4f1ec;
+  background-color: #e9dfd0;
   border: none;
   resize: none;
   border-bottom: 3px solid #545149;
@@ -27,6 +32,7 @@ form textarea {
   font-weight: 700;
   color: #545454;
   padding: 0;
+  margin-top: 0.9em;
 }
 
 .error {
@@ -40,4 +46,24 @@ form textarea {
   color: white;
   background-color: red;
   border-radius: 40px;
+}
+
+.compose form {
+  display: flex;
+  width: inherit;
+  flex-direction: column;
+}
+
+.new-tweet {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  width: 100%;
+}
+
+.tweet-input {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
 }

@@ -3,6 +3,7 @@
 
 <head>
   <!-- Meta Information -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   <title>Tweeter - Home Page</title>
 
   <!-- External CSS -->
@@ -15,56 +16,63 @@
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
-
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+  <!-- App JS -->
+  <script type="text/javascript" defer src="/scripts/client.js"></script>
+  <script type="text/javascript" defer src="/scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" defer src="/scripts/tweet-constructor.js"></script>
+  <script type="text/javascript" defer src="/scripts/helpers.js"></script>
 </head>
 
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>tweeter</span>
-  </nav>
-  <header class="avatar">
-    <div>
-      <img src="/images/circle-cropped.png">
-    </div>
-    <br>
-    <div>
-      <span>Sepehr</span> Sobhani
-    </div>
-  </header>
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <div class="error">
-        <i class="fas fa-exclamation-circle fa-lg"></i>
-        <p>Error</p>
-        <i class="fas fa-exclamation-circle fa-lg"></i>
-      </div>
-      <h2>Compose Tweet</h2>
-      <form id="form">
-        <label for="tweet-text"></label>
-        <textarea name="text" id="tweet-text" placeholder="What are you humming about?" spellcheck="true"></textarea>
-        <footer>
-          <button id="button" type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </footer>
-      </form>
+    <section>
+      <span><b>Write</b> a tweet</span>
+      <button>
+        <i class="fas fa-angle-double-down"></i>
+      </button>
     </section>
-    <section class="tweets-container">
+  </nav>
+  <main>
+    <header>
+      <div class="inner">
+        <img src="/images/circle-cropped.png">
+        <div class="user-name">
+          <span>Sepehr</span> Sobhani
+        </div>
+      </div>
+    </header>
+    <!-- Page-specific (main) content here -->
+    <section class="tweets-column">
+      <section class="tweets">
+        <div class="compose">
+          <div class="error">
+            <i class="fas fa-exclamation-circle fa-lg"></i>
+            <p>Error</p>
+            <i class="fas fa-exclamation-circle fa-lg"></i>
+          </div>
+          <form id="form">
+            <label for="tweet-text"></label>
+            <textarea name="text" id="tweet-text" placeholder="What are you humming about?"
+              spellcheck="true"></textarea>
+            <footer>
+              <button id="button" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </footer>
+          </form>
+        </div>
+      </section>
+      <section class="tweets-container">
+      </section>
     </section>
   </main>
-  <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
-  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  <script type="text/javascript" src="/scripts/tweet-constructor.js"></script>
-  <script type="text/javascript" src="/scripts/helpers.js"></script>
+  <footer>
+    <button class="bottom-toggle">
+      <i class="fas fa-angle-double-up"></i>
+    </button>
+  </footer>
 </body>
-
-</html>

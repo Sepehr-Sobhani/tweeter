@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+//Load tweets from database
 const URL = "http://localhost:8080/";
 const loadTweets = function () {
   $.get("/tweets", function (tweets) {
@@ -33,7 +34,7 @@ const tweetFormHandler = function () {
   $("#form").submit(function (event) {
     event.preventDefault();
     const tweetText = $(this).find("textarea").val();
-    if (tweetText !== "" && tweetText !== null && tweetText <= 140) {
+    if (tweetText !== "" && tweetText !== null && tweetText.length <= 140) {
       const queryString = $(this).serialize();
       $.post({ url: `${URL}tweets`, data: queryString }).then(() => {
         loadTweets();
