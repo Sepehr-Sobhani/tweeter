@@ -1,5 +1,5 @@
 //Create newtweet elements
-const createTweetElement = function (tweetObj, time) {
+const createTweetElement = (tweetObj, time) => {
   const $tweet = ` <article class="tweet">
       <div class="tweet-header">
         <div class="author">
